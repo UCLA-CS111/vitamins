@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vitamin 6 — The Vital & Very Silly Page</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;900&family=Space+Grotesk:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-1: #0b1220;
+      --bg-2: #082033;
+      --glass: rgba(255, 255, 255, 0.04);
+      --accent1: #ffd07a;
+      --accent2: #7ad5ff;
+      --pink: #ff6b97;
+      --card-shadow: 0 18px 50px rgba(2, 6, 23, 0.6);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: "Rubik", system-ui, -apple-system, Arial;
+      background:
+        radial-gradient(800px 400px at 10% 10%, rgba(255, 107, 151, 0.04), transparent 8%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      color: #eaf6ff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 36px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header.hdr {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #07102a;
+      font-weight: 900;
+      font-size: 18px;
+      box-shadow: 0 8px 30px rgba(122, 213, 255, 0.08);
+      transform: rotate(-8deg);
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 700;
+      font-family: "Space Grotesk", "Rubik", sans-serif;
+      font-size: clamp(26px, 4vw, 38px);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: linear-gradient;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      margin: 6px 0 0 0;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .silly-line {
+      margin-top: 18px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #eaf6ff;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .emoji {
+      font-size: 26px;
+      transform: translateY(2px)
+    }
+
+    .blurb {
+      margin: 16px 0 6px 0;
+      color: #dff3ff;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 0;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-playful {
+      background: linear-gradient(90deg, var(--pink), #ffb86b);
+      color: #071022;
+      box-shadow: 0 10px 30px rgba(255, 107, 151, 0.16);
+      transition: transform .18s ease;
+    }
+
+    .btn-playful:hover {
+      transform: translateY(-4px) rotate(-1deg);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #cfe9ff;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(6px);
+    }
+
+    .fun-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .fun-item {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+      border-radius: 10px;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      font-weight: 600;
+      font-size: 14px;
+      color: #eaf6ff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .artbox {
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: var(--card-shadow);
+    }
+
+    .artbox img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      transition: transform .6s cubic-bezier(.2, .9, .25, 1);
+    }
+
+    .artbox:hover img {
+      transform: scale(1.02) rotate(-0.4deg);
+    }
+
+    .caption {
+      margin-top: 8px;
+      text-align: center;
+      color: #d4f0ff;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    /* silly mascot area */
+    .mascot {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, rgba(122, 213, 255, 0.03), rgba(255, 183, 123, 0.02));
+      border: 1px dashed rgba(255, 255, 255, 0.04);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mascot .left {
+      font-size: 14px;
+      color: #dff3ff;
+      font-weight: 700;
+    }
+
+    .mascot .right {
+      font-size: 13px;
+      opacity: 0.9;
+      color: #cfe9ff;
+    }
+
+    /* footer */
+    footer {
+      margin-top: 18px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    /* responsive */
+    @media (max-width:980px) {
+      .container {
+        grid-template-columns: 1fr;
+        padding-bottom: 20px;
+      }
+
+      footer {
+        text-align: center;
+      }
+    }
+
+    /* fun little spinning confetti when clicking the big button */
+    .confetti {
+      position: absolute;
+      pointer-events: none;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      transform-origin: center;
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container" role="main" aria-labelledby="vit-title">
+    <section class="card" aria-labelledby="vit-title">
+      <header class="hdr">
+        <div class="badge" aria-hidden="true">V6</div>
+        <div>
+          <h1 id="vit-title">Vitamin 6</h1>
+          <div class="subtitle">the tiny tonic for your operating systems moodboard</div>
+        </div>
+      </header>
+
+      <div class="silly-line" role="note">
+        <div class="emoji">🩺</div>
+        <div style="flex:1;">
+          Officially labelled <strong>Vitamin 6</strong>. Unofficially: the thing you glance at before coffee.
+        </div>
+      </div>
+
+      <p class="blurb">
+        A little page to celebrate <strong>Vitamin 6</strong> — no dense instructions here, just a few friendly quips,
+        delightful art, and optional silliness for a college OS crowd. If this page had a pulse, it'd hum in binary.
+      </p>
+
+      <div class="actions" role="toolbar" aria-label="Playful actions">
+        <button class="btn btn-playful" id="sillyBtn">Dose me with silliness 🎉</button>
+        <button class="btn btn-ghost"
+          onclick="navigator.clipboard?.writeText('Vitamin 6 — good vibes').then(()=>alert('Motto copied!'))">Copy
+          motto</button>
+        <button class="btn btn-ghost" onclick="window.print()">Print (for nostalgia)</button>
+      </div>
+
+      <div class="fun-list" aria-hidden="false">
+        <div class="fun-item">🧪 Vitamin name: <strong>Vitamin 6</strong></div>
+        <div class="fun-item">🧸 Mood: Playful & Focused</div>
+        <div class="fun-item">🎓 Audience: College OS humans</div>
+        <div class="fun-item">🕹️ Energy: Mildly chaotic good</div>
+      </div>
+
+      <div class="mascot" aria-hidden="true">
+        <div class="left">Mascot: Sir Kernelly the Cheerful</div>
+        <div class="right">He applauds context switches and secretly loves snacks.</div>
+      </div>
+
+      <footer>For class vibes: keep it fun, keep it tasteful, and avoid real chaos.</footer>
+    </section>
+
+    <aside class="right" aria-label="Artwork and silliness">
+      <div class="artbox" title="Vitamin 6 emblem">
+        <img id="artImg" src="files/cs111_logo.png" alt="Vitamin 6 fancy emblem — OS-themed art" />
+      </div>
+      <div class="caption">Emblem: stylish and slightly heroic (fits in labs and slides).</div>
+      <div style="display:flex;gap:10px;">
+        <button class="btn btn-ghost" onclick="toggleFrame()">Toggle frame</button>
+        <button class="btn btn-ghost" id="cheer">Give Sir Kernelly a cheer</button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- confetti container -->
+  <div id="confettiRoot" aria-hidden="true"></div>
+
+  <script>
+    // playful interactions
+    const sillyBtn = document.getElementById('sillyBtn');
+    const confettiRoot = document.getElementById('confettiRoot');
+    const artImg = document.getElementById('artImg');
+    let framed = true;
+
+    function makeConfetti(x, y) {
+      const colors = ['#ff6b97', '#ffd07a', '#7ad5ff', '#9bffb8', '#d7b3ff'];
+      for (let i = 0; i < 22; i++) {
+        const el = document.createElement('div');
+        el.className = 'confetti';
+        el.style.left = (x + (Math.random() - 0.5) * 120) + 'px';
+        el.style.top = (y + (Math.random() - 0.5) * 60) + 'px';
+        el.style.background = colors[Math.floor(Math.random() * colors.length)];
+        el.style.opacity = 1;
+        el.style.transform = 'translateZ(0) rotate(' + Math.floor(Math.random() * 360) + 'deg)';
+        el.style.width = (6 + Math.random() * 10) + 'px';
+        el.style.height = (6 + Math.random() * 10) + 'px';
+        confettiRoot.appendChild(el);
+        // animate
+        (function (e) {
+          const dx = (Math.random() - 0.4) * 200;
+          const dy = -160 - Math.random() * 120;
+          e.animate([
+            { transform: 'translate(0px,0px) rotate(0deg)', opacity: 1 },
+            { transform: `translate(${dx}px, ${dy}px) rotate(${(Math.random() * 720 - 360)}deg)`, opacity: 0.1 }
+          ], { duration: 900 + Math.random() * 800, easing: 'cubic-bezier(.18,.9,.28,1)' });
+          setTimeout(() => { e.remove(); }, 1800 + Math.random() * 900);
+        })(el);
+      }
+    }
+
+    sillyBtn.addEventListener('click', (ev) => {
+      // find button position
+      const r = sillyBtn.getBoundingClientRect();
+      const x = r.left + r.width / 2;
+      const y = r.top + r.height / 2;
+      makeConfetti(x, y);
+      // playful text changes
+      sillyBtn.textContent = ['More tonic!', 'Another dose!', 'Vitamin loaded!', 'Silliness incoming!'][Math.floor(Math.random() * 4)] + ' 🎊';
+      setTimeout(() => sillyBtn.textContent = 'Dose me with silliness 🎉', 1600);
+    });
+
+    // Toggle subtle art frame
+    function toggleFrame() {
+      framed = !framed;
+      if (framed) {
+        artImg.style.borderRadius = '8px';
+        artImg.style.boxShadow = '';
+      } else {
+        artImg.style.borderRadius = '999px';
+        artImg.style.boxShadow = '0 18px 50px rgba(2,6,23,0.7), inset 0 0 40px rgba(255,255,255,0.02)';
+      }
+    }
+
+    // Cheer button: small toast
+    document.getElementById('cheer').addEventListener('click', () => {
+      const t = document.createElement('div');
+      t.textContent = '👏 Sir Kernelly cheers you back!';
+      t.style.position = 'fixed';
+      t.style.right = '20px';
+      t.style.bottom = '22px';
+      t.style.padding = '10px 14px';
+      t.style.borderRadius = '10px';
+      t.style.background = 'linear-gradient(90deg,#ffd07a,#7ad5ff)';
+      t.style.color = '#071022';
+      t.style.fontWeight = '800';
+      t.style.boxShadow = '0 12px 40px rgba(2,6,23,0.6)';
+      document.body.appendChild(t);
+      setTimeout(() => t.animate([{ opacity: 1, transform: 'translateY(0px)' }, { opacity: 0, transform: 'translateY(-18px)' }], { duration: 1400, easing: 'ease' }), 500);
+      setTimeout(() => t.remove(), 1700);
+    });
+
+    // friendly fallback if image doesn't load
+    artImg.addEventListener('error', () => {
+      artImg.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+           <rect width="100%" height="100%" fill="#071022"/>
+           <text x="50%" y="48%" fill="#7ad5ff" font-family="Rubik,Arial" font-weight="700" font-size="28" text-anchor="middle">Vitamin 6 artwork missing</text>
+           <text x="50%" y="56%" fill="#dff3ff" font-family="Rubik,Arial" font-size="16" text-anchor="middle">Drop the PNG at /mnt/data/Gemini_Generated_Image_bsz42tbsz42tbsz4.png</text>
+         </svg>`
+      );
+    }, { once: true });
+  </script>
+</body>
+
+</html>

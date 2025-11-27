@@ -1,0 +1,6 @@
+Primary contributor: Sai Achalla, CS 111 TA
+
+The sample logo included with this Vitamin 6 content was generated using the Gemini model (Nano Banana Pro). provided a prompt describing the requirements for a CS 111 class logo - small enough to fit in a circular frame, readable at small sizes, and inspired by the illustrative style of Stephen Biesty.
+
+The resulting image was selected as sample artwork for the Vitamin 6 assignment and is provided purely as demonstration content.
+

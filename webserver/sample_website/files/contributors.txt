@@ -1,0 +1,6 @@
+This sample content was assembled by the CS 111 LAs (Pavan Gudavalli, Rohan Sinha) as an example of what a student web server might serve.
+
+Content creation assistance was provided by an AI language model. No human contributors beyond the course staff were involved.
+
+This file is provided only as sample data for Vitamin 6.
+
